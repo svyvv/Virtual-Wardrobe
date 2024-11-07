@@ -1,0 +1,56 @@
+<html>
+<head>
+<title>WardrobeManager.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+WardrobeManager.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com</span><span class="s2">.</span><span class="s1">example</span><span class="s2">.</span><span class="s1">wardrobe</span><span class="s2">;</span>
+
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">util</span><span class="s2">.</span><span class="s1">ArrayList</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">util</span><span class="s2">.</span><span class="s1">List</span><span class="s2">;</span>
+
+<span class="s0">public class </span><span class="s1">WardrobeManager </span><span class="s2">{ </span><span class="s0">private static </span><span class="s1">WardrobeManager instance</span><span class="s2">;</span>
+    <span class="s0">private </span><span class="s1">List</span><span class="s2">&lt;</span><span class="s1">ClothingItem</span><span class="s2">&gt; </span><span class="s1">clothingItems</span><span class="s2">;</span>
+    <span class="s0">private </span><span class="s1">List</span><span class="s2">&lt;</span><span class="s1">Outfit</span><span class="s2">&gt; </span><span class="s1">outfits</span><span class="s2">;</span>
+
+    <span class="s0">private </span><span class="s1">WardrobeManager</span><span class="s2">() {</span>
+        <span class="s1">clothingItems </span><span class="s2">= </span><span class="s0">new </span><span class="s1">ArrayList</span><span class="s2">&lt;&gt;();</span>
+        <span class="s1">outfits </span><span class="s2">= </span><span class="s0">new </span><span class="s1">ArrayList</span><span class="s2">&lt;&gt;();</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public static synchronized </span><span class="s1">WardrobeManager getInstance</span><span class="s2">() {</span>
+        <span class="s0">if </span><span class="s2">(</span><span class="s1">instance </span><span class="s2">== </span><span class="s0">null</span><span class="s2">) {</span>
+            <span class="s1">instance </span><span class="s2">= </span><span class="s0">new </span><span class="s1">WardrobeManager</span><span class="s2">();</span>
+        <span class="s2">}</span>
+        <span class="s0">return </span><span class="s1">instance</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public void </span><span class="s1">addClothingItem</span><span class="s2">(</span><span class="s1">ClothingItem item</span><span class="s2">) {</span>
+        <span class="s1">clothingItems</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s1">item</span><span class="s2">);</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public </span><span class="s1">List</span><span class="s2">&lt;</span><span class="s1">ClothingItem</span><span class="s2">&gt; </span><span class="s1">getClothingItems</span><span class="s2">() {</span>
+        <span class="s0">return </span><span class="s1">clothingItems</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public void </span><span class="s1">addOutfit</span><span class="s2">(</span><span class="s1">Outfit outfit</span><span class="s2">) {</span>
+        <span class="s1">outfits</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s1">outfit</span><span class="s2">);</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public </span><span class="s1">List</span><span class="s2">&lt;</span><span class="s1">Outfit</span><span class="s2">&gt; </span><span class="s1">getOutfits</span><span class="s2">() {</span>
+        <span class="s0">return </span><span class="s1">outfits</span><span class="s2">;</span>
+    <span class="s2">}</span>
+<span class="s2">}</span>
+</pre>
+</body>
+</html>
